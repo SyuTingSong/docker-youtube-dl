@@ -6,7 +6,7 @@ case $CMD in
         ;;
     dl)
         youtube-dl --proxy $PROXY -f $FORMAT --merge-output-format \
-        $OUTPUT_FORMAT $VIDEO_URL
+        $OUTPUT_FORMAT $ARGS $VIDEO_URL
         ;;
     *)
         exec $@
