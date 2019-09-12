@@ -1,6 +1,9 @@
 FROM alpine:3.10
 
-RUN apk add --no-cache ca-certificates youtube-dl && mkdir /download
+RUN apk add --no-cache ffmpeg python && mkdir /download && \
+    wget https://yt-dl.org/downloads/latest/youtube-dl \
+      -O /usr/local/bin/youtube-dl && \
+    chmod a+rx /usr/local/bin/youtube-dl
 
 ENV FORMAT="bestvideo[fps<=30][ext=mp4]+bestaudio[ext=m4a]"
 ENV PROXY=socks5://shadowsocks:1080
