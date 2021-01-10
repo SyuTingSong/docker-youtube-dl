@@ -1,6 +1,6 @@
-FROM alpine:3.10
+FROM alpine:3.12
 
-RUN apk add --no-cache ffmpeg python && mkdir /download && \
+RUN apk add --no-cache ffmpeg python2 && mkdir /download && \
     wget https://yt-dl.org/downloads/latest/youtube-dl \
       -O /usr/local/bin/youtube-dl && \
     chmod a+rx /usr/local/bin/youtube-dl
